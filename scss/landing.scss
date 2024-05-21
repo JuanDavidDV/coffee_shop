@@ -1,0 +1,497 @@
+@use './partials/global' as *;
+
+/*"Frame" is defined as the border lines surrrounding an object in the website*/
+
+ * {
+    box-sizing: border-box; /*Added box-sizing: border-box, to prevent main containers, and elements, lose consistent measurements. And also to prevent the website have empty white spaces on the right sides*/
+}
+
+/*Removes margin in the body around website, applied to match display from Mock docuemnt*/
+body {
+    margin: 0rem;
+    padding: 0rem;
+}
+
+/*Variables*/
+$nitro-pink: #FFF0ED;
+$nitro-blue: #5BACC3;
+$graphite: #393939;
+$gray: #909090;
+$ligh-gray: #F7F7F7;
+$white: #FFF;
+$default-padding: 1.25em;
+$default-margin: 1.25em;
+$card-radius: 0.625rem;
+$logo-width: 3.125rem;
+$image-height: 17.5rem;
+
+@mixin cards {
+    width: 20.625rem;
+    height: 27.5rem;
+    margin: 2em;            /*Included a margin of 2em to match the display exactly as shown in the Mock Document */
+    padding: 1.25em 0em;   /*Padding added at top and bottom in order to match display presented in Mock doc*/
+    border-radius: $card-radius;
+    box-shadow: 0rem 0.3125rem 0.5625rem -0.0625rem rgba(0, 0, 0, 0.25);   
+    text-align: center;     /*center content (in this case the images)*/
+    background-color: $white;
+}
+
+@mixin card__sub-container {
+        width: 100%;
+        background-color: $nitro-pink;
+        display: flex;
+        justify-content: space-around;
+        border-bottom-left-radius: $card-radius;
+        border-bottom-right-radius: $card-radius;
+        padding-bottom: $default-padding;    /*Added 1.25em padding-bottom to make card display look as accurate as the Mock document*/
+}
+
+@mixin discount__display--text-logos-button {
+    width: 40vw;  /*40vw applied in order to match Mock Document layout*/
+    margin: 1.25em 5.625em 1.25em 0em; /*Fixed margin to align vertically current box, to discount container at the bottom, to make display look as close as the Mock document*/
+    padding: 1.25em;
+    align-self: flex-end; /*Possitions current container to appropiate location in the cross axis*/
+}
+
+@mixin discount__background-image {
+    background-image: url("../assets/images/coldbrewbackground.png");
+    width: 25rem;
+    padding: $default-padding;
+    margin: 1.25em 1.25em 1.25em 5.625em; /*Fixed margin to align vertically current box, to discount container at the bottom, to make display look as close as the Mock document*/
+    background-size: cover;
+    position: relative;
+}
+
+@mixin discount__background-image--frame {
+    width: 100%;
+    height: 100%;
+    border-style: solid;
+    border-width: 0.3125rem;
+    border-color: $nitro-blue;
+    position: absolute;
+    top: -1.5625rem;     /*20px offset + 5px borther-width for main axis = 25px=1.5625rem. Customized offset/position match design as in the Mock document*/
+    left: -1.5625rem;   /*20px offset + 5px borther-width for cross axis = 25px=1.5625rem. Customized offset/position match design as in the Mock document*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin discount__container {
+    width: 90%;
+    margin: 8em auto; /*Included a margin of 8em in order to match the display size of the discount section accorting to the Mock document display*/
+    padding: 2em; /*2em added to make discound box look like Mock document*/
+}
+
+@mixin button {
+    background-color: $nitro-blue;
+    padding: 1.25em;
+    margin: 1.25em 1.25em 1.25em 0.3125em; /*Fixed margin to aligh button to the right vertically as shown on the Mock Document*/
+    width: 11.25rem;
+    color: $white;
+    border: none;
+    position: relative;
+}
+
+@mixin button--frame {
+    width: 100%;
+    height: 100%;
+    border-width: 0.125rem;
+    border-color: $graphite;
+    border-style: solid;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    top: -0.410rem; /*Customized offset/position match design as in the Mock document*/
+    left: -0.410rem; /*Customized offset/position match design as in the Mock document*/
+}
+
+@mixin button--active { 
+    .header__button--frame {transform: translate(0.410rem, 0.410rem); /*Animates "Shop Now" button*/
+    }  
+
+    .products__button--frame {transform: translate(0.410rem, 0.410rem); /*Animates "View All" button*/
+    }
+
+    .discount__subcontainer-top__button--frame {transform: translate(0.410rem, 0.410rem);   /*Animates "Learn More" button*/
+    }
+}
+
+@keyframes rotation--tilted-can {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes discount__animation {
+    0% {
+        background-color: $graphite;
+    }
+
+    50% {
+        background-color: $nitro-blue;
+    }
+
+    100% {
+        background-color: $graphite;
+    }
+}
+
+.section-display {
+    width: 100%;
+    padding: $default-padding;
+}
+
+.title-h1-h2 {
+    font-size: 3.75rem;
+    font-weight: 300;
+    color: $graphite;
+}
+
+.title-h3 {
+    font-size: 2.0625rem;
+    font-weight: 300;
+    color: $graphite;
+}
+
+.button-nav-link--style {
+    font-size: 1.3125rem;
+    font-weight: 400;
+}
+
+.paragraph {
+    font-size: 1.125rem;
+    font-weight: 400;
+    color: $graphite;
+}
+
+.paragraph--discount {
+    color: $white;
+    font-size: 2.8125rem;
+    font-weight: 400;
+    margin: 0em;   /*Margin 0 added to match display is in Mock doc*/
+    text-align: center;
+}
+
+.box {
+    display: inline-block; /*Setups inline-blocks boxes inside the main nav container*/
+ }
+
+.image--size {
+    height: $image-height;
+}
+
+button:hover {
+    cursor: pointer;  /*Change cursor to pointer in button. Pointer was not applied by default to a button. */
+}
+
+.logo {   /*selects width for all logos*/
+    width: $logo-width;
+}
+
+.footer__background-logo {
+    width: 7.5rem;
+    opacity: 25%;
+    position: absolute;
+}
+
+.header-navigation {
+    @extend .section-display;
+    background-color: $nitro-pink;
+    display: flex;
+    justify-content: space-between;      
+    align-items: baseline;
+
+        &__logo-and-title {
+            display: flex;              /*Flex used to make logo and title appear next to each other*/
+        }
+
+        &__logo {
+            padding-top: 0.80em;     /*Customed padding to make logo align as close as the Mock doc*/
+            padding-right: 0.3125em;
+            @extend .logo;
+        }
+    
+        &__title__link {
+            text-decoration: none;
+        }
+
+        &__title {
+            font-size: 3.2rem;      /*Customed size to make it look as in the Mock doc*/
+            font-weight: 300;
+            color: $graphite;
+            margin: 0em;
+        }
+
+        &__container {
+            @extend .box;
+
+                &--box {
+                    @extend .box;
+                }
+
+                &__link {
+                    margin: $default-margin;
+                    text-decoration: none;
+                    color: $graphite;
+                    @extend .button-nav-link--style;
+                }
+
+                &__link--color {
+                    color:$nitro-blue;
+                    margin-right: 0em; /*Removes margin right from list nav "Shop Now" to make it look like in the Mock document*/
+                }
+        }         
+}
+
+.header {
+    @extend .section-display;
+    background-color: $nitro-pink;
+    padding-bottom: 2.50em;        /*Added to match Mock document*/
+
+        &__text-container {
+            @extend .box;
+            width: 45vw;            /*Adjust position for the text container*/
+            padding: 8%;            /*Added 8% padding to make it look as close as possible to Mock document*/
+            vertical-align: top;    /*Aligns container upwards*/
+            
+            &__title {
+                @extend .title-h1-h2;
+                margin: 0em; /*Removes default margin*/
+            }
+
+            &__paragraph {
+                @extend .paragraph;
+            }        
+    }
+    
+    &__button {
+        @include button;
+        @extend .button-nav-link--style;
+
+            &:active {
+                @include button--active;
+            }
+            
+            &--frame {
+                 @include button--frame;
+            }
+    }
+
+    &__image {
+        @extend .box;
+        padding-left: 13%;/*Left margin applied in order to separate inline-blocks and make them look as close as possible as the Mock doc*/
+    }   
+}
+
+.products {
+    @extend .section-display;
+    background-color: $ligh-gray;
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 3.25em; /*Customized margin added to match display as the Mock doc*/
+    
+        &__title {
+            @extend .title-h1-h2;
+            text-align: center;
+            margin: 0.5em; /*Customed margin to have a similar display as Mock doc*/
+        }
+        
+        &__card-container {
+            display: flex;
+            justify-content: center; /*Centers the 3 cards*/
+            margin-bottom: 2.25em; /*Margin added to add an space between the cards and the button, similar to Mock doc*/
+        
+                &__card-box {
+                    @include cards;
+
+                    &--image {
+                        @extend .image--size;
+                        padding-bottom: 1.25em; /*Added 1.25em padding-bottom to make card display look as accurate as the Mock document*/
+                    }
+                }
+        }
+
+        &__card__sub-container {
+            @include card__sub-container;
+
+                &--description {
+                    @extend .box;  
+                }
+
+                &__title {
+                    @extend .title-h3;
+                    margin-bottom: 0em; /*Removed bottom margin to make Product title layout display similar as the Mock*/
+                }
+
+                &--quantity {/*used default font-size value from global css to make it look as the Mock doc*/
+                    color: $gray; 
+                    display: flex; 
+                    margin-top: 0em; /*Removed top margin to make the product quantitive decription layout display similar as the Mock */
+                }
+
+                &--price {
+                    font-size: 2rem;
+                    color: $nitro-blue;
+                    font-weight: 700; /*Addded a font weight of 700 (bold) in order to make the price style look the same as in the Mock doc*/
+            
+                    &--alignment {
+                        align-content: flex-end;    /*Content aligned to "flex-end" in order to align cardPrice as shown in Mock document */
+                    }
+                    
+                }
+
+                &--price-padding {
+                    padding-left: 2em;     /*Adds a 2em left padding to the ($5) so that the alignment of that particular price matches Mock document*/
+                }
+        }
+
+    &__link-button {
+        display: block;
+        margin: auto;   /*mainly used to center button.*/
+    }
+
+    &__button {
+        @include button;
+        @extend .button-nav-link--style;  
+        margin: 0em;    /*Margin removed given that it was inheric by the link of the button, and cause "View All" button be accessible outside of the button itself */
+
+
+            &:active { 
+                @include button--active; 
+            }   
+        
+            &--frame {
+                @include button--frame;
+            }
+    }
+}
+
+.discount {
+    @extend .section-display;
+    background-color: $white;
+    margin: 1.25em 0em;
+
+        &__subcontainer-top {
+            display: flex;
+            justify-content: space-around;  /*Apply space layout for the "We're Different" and image sections */
+            padding: $default-padding;
+            margin: $default-margin;
+
+                &--text-logos-button {      /*Display for the container that has text, logos, and button*/
+                    @include discount__display--text-logos-button;
+                }
+            
+                &__title {
+                    @extend .title-h1-h2;
+                    margin: 0em;   /*Remove default margin*/
+                }
+
+                &__paragraph {
+                    @extend .paragraph;
+                }
+
+                &__logo--box {
+                    display: flex;
+                    justify-content: space-between;
+                    padding-right: 1.5625em; /*added a margin-right of 0.5625rem to align cup of coffee logo to the paragraph above as shown in the Mock document.*/
+                }
+
+                &__logo {
+                    @extend .logo;
+                }
+
+                &__button {
+                    @include button;
+                    @extend .button-nav-link--style;
+
+                    &:active { 
+                        @include button--active; 
+                    }   
+
+                    &--frame {
+                        @include button--frame; 
+                    }
+                }
+
+                &__background-image {
+                    @include discount__background-image;
+                    
+                        &--frame {
+                            @include discount__background-image--frame;
+                        }
+                    
+                        &--tilted-can {
+                            @extend .image--size;
+                            padding: $default-padding;
+                            margin: $default-margin;
+
+                            &:hover {
+                                animation: rotation--tilted-can 2s infinite linear ;
+                            }                    
+                        }             
+                }                   
+        }
+
+        &__subcontainer-bottom { /*Discount container (box)*/
+            @include discount__container;
+            animation: discount__animation 2.5s ease-in-out infinite;  /*ease-in-out used to make animation similar to Mock doc demo*/
+        
+            &__text {
+                @extend .paragraph--discount;
+
+                    &--bold {
+                        font-weight: 700; /*Provides bold style to a specific part in the text of discount*/
+                    }
+            }
+        }
+}
+
+.footer {
+    @extend .section-display;
+    background-color: $nitro-pink;
+    display: flex;
+    justify-content: space-around;
+    align-items: baseline;
+    position: relative;
+    overflow: hidden;  /*used to prevent coffee bean logo background, to overlap right side of the page and add extra white area*/
+
+        &__box {    /*Adds padding and margin to footer content to match as acqurate as possible to Mock doc*/
+            padding: $default-padding;
+            margin: $default-margin;
+        
+                &__title {
+                    @extend .title-h3;
+                    margin-bottom: 0.6061em; /*added to match Social section display to look lined as in the Mock doc*/
+                }
+
+                &__paragraph {
+                    @extend .paragraph;
+                    margin: 0em;
+
+                        &--bold {
+                            font-weight: 700;
+                        }
+                }
+        }
+
+        &__logo {
+            @extend .logo;
+        }
+
+        &__background-icon1 {
+            @extend .footer__background-logo;
+            left: -3%;
+            top: 12%;
+        }
+
+        &__background-icon2 {
+            @extend .footer__background-logo;
+            bottom: 10%;
+            right: -3%;
+        }
+}

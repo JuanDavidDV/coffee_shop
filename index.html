@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <title>Coffee Shop - Home</title>
+    <link rel="stylesheet" type="text/css" href="scss/landing.css">
+</head>
+<body>
+    <header>
+        <div class="header-navigation">                           
+            <div class="header-navigation__logo-and-title">                       <!--Creates a container to group the logo and title (nitro) to apply space-between-->  
+                <a href="index.html">
+                    <img src="assets/logos/coffee-beans-logo-and-footer.svg" class="header-navigation__logo" alt="coffee-bean-logo"></a>
+                <a href="index.html" class="header-navigation__title__link">     
+                    <h2 class="header-navigation__title">nitro</h2>
+                </a>
+            </div>    
+            <nav class="header-navigation__container">                               <!--Creates container to distribute information by inline-blocks-->
+                <ul>                        
+                    <li class="header-navigation__container--box">                        <!--Creates box inside list to distribute information by inline-blocks-->
+                        <a class="header-navigation__container__link" href="index.html">ABOUT</a>   
+                    </li>
+                    <li class="header-navigation__container--box">                        <!--Creates box inside list to distribute information by inline-blocks-->
+                        <a class="header-navigation__container__link" href="pages/menu.html">MENU</a>
+                    </li>
+                    <li class="header-navigation__container--box">                        <!--Creates box inside list to distribute information by inline-blocks-->
+                        <a class="header-navigation__container__link header-navigation__container__link--color" href="pages/menu.html">SHOP NOW</a> 
+                    </li>
+                </ul>
+            </nav>
+        </div>                                                              
+        <section class="header">                                 
+            <div class="header__text-container">                          <!--Creates box inside header container for title, paragraph, and button, to distribute information by inline-blocks in header-->
+                <h1 class="header__text-container__title">Nitro Coffee</h1>
+                <p class="header__text-container__paragraph">
+                    Coffee is a brewed drink prepared from roasted coffee beans, the seeds of berries from certain Coffea species.</p>
+                <a href="pages/menu.html"> 
+                    <button class="header__button" type="button">
+                        <div class="header__button--frame">SHOP NOW</div>
+                    </button>
+                </a>
+            </div>
+            <div class="header__image">                                <!--Creates box inside header container for coffee bag image, to distribute information by inline-blocks in header-->
+                <img src="assets/images/coffeebeans-hero.png"  alt="coffee-bag">
+            </div>
+        </section>                                                          
+    </header>
+    <section>                                                               
+        <div class="products">                                   
+            <h2 class="products__title">Our Products</h2>
+            <div class="products__card-container">                                  
+                <article class="products__card-container__card-box">                            
+                    <img src="assets/images/coffeebeans.png" class="products__card-container__card-box--image" alt="coffee-beans">
+                    <div class="products__card__sub-container"> <!--Sub container created to mainly store in the card container the product title, quantity description, and price-->
+                        <div class="products__card__sub-container--description">  
+                            <h3 class="products__card__sub-container__title">Coffee Beans</h3>
+                            <p class="products__card__sub-container--quantity">Pack of 3</p>
+                        </div>
+                        <div class="products__card__sub-container--price--alignment">
+                            <p class="products__card__sub-container--price">$19</p>
+                        </div>
+                    </div>
+                </article>
+                <article class="products__card-container__card-box">                           
+                    <img src="assets/images/coldbrew.png" class="products__card-container__card-box--image" alt="cold-brew">
+                    <div class="products__card__sub-container"> <!--Sub container created to mainly store in the card container the product title, quantity description, and price-->
+                        <div class="products__card__sub-container--description">  
+                            <h3 class="products__card__sub-container__title">Cold Brew</h3>
+                            <p class="products__card__sub-container--quantity">1 can</p>
+                        </div>
+                        <div class="products__card__sub-container--price--alignment">
+                                <p class="products__card__sub-container--price products__card__sub-container--price-padding">$5</p>       <!--products__card__sub-container--price-padding class included in orer to fix the alignment and make it lok as the Mock doc (please refer to CSS comment for more details). -->
+                        </div>
+                    </div>
+                </article>          
+                <article class="products__card-container__card-box">                            
+                    <img src="assets/images/inhousebrew.png" class="products__card-container__card-box--image" alt="in-house-brew">
+                    <div class="products__card__sub-container"> <!--Sub container created to mainly store in the card container the product title, quantity description, and price-->
+                        <div class="products__card__sub-container--description"> 
+                            <h3 class="products__card__sub-container__title">In-house Brew</h3>
+                            <p class="products__card__sub-container--quantity">1 cup</p>
+                        </div>
+                        <div class="products__card__sub-container--price--alignment">
+                            <p class="products__card__sub-container--price">$3</p>
+                        </div>
+                    </div>
+                </article>
+            </div>                                                       
+            <a class="products__link-button" href="pages/menu.html">
+                <button class="products__button" type="button">
+                    <div class="products__button--frame">VIEW ALL</div>
+                </button>
+            </a>   
+        </div>                                                              
+    </section>
+    <section class="discount">                                             
+        <div class="discount__subcontainer-top">    <!--Creates container that includes "we are different box" and tilted can, located at the top of discount section-->
+            <div class="discount__subcontainer-top--text-logos-button">
+                <h2 class="discount__subcontainer-top__title">We're Different</h2>
+                <p class="discount__subcontainer-top__paragraph">We grow and roast our own beans. Every bean, every cup, every step of the way, we strive for excellence.</p>
+                <div class="discount__subcontainer-top__logo--box">    
+                    <img src="assets/logos/planting.svg" class="discount__subcontainer-top__logo" alt="coffee-plant">
+                    <img src="assets/logos/coffee-beans.svg" class="discount__subcontainer-top__logo" alt="coffee-beans">
+                    <img src="assets/logos/coffee-cup.svg" class="discount__subcontainer-top__logo" alt="coffee-cup">
+                </div>
+                <div>
+                    <a href="index.html"> 
+                        <button class ="discount__subcontainer-top__button" type="button">
+                            <div class="discount__subcontainer-top__button--frame">LEARN MORE</div>
+                        </button>
+                    </a>
+                </div>           
+            </div>
+            <div class="discount__subcontainer-top__background-image">
+                <div class="discount__subcontainer-top__background-image--frame">
+                    <img src="assets/images/tiltedcan.png" class="discount__subcontainer-top__background-image--tilted-can">
+                </div>
+            </div>
+        </div>
+        <div class="discount__subcontainer-bottom">  <!--Creates discount box at the bottom-->
+            <p class="discount__subcontainer-bottom__text">Get 20% off your first order with code: <span class="discount__subcontainer-bottom__text--bold">FirstNitro</span></p>
+        </div>
+    </section>                                                            
+    <footer class="footer">                                                              
+        <div class="footer__box">                   <!--Creates box inside footer (for more info please check CSS comment)-->   
+            <h3 class="footer__box__title">Address</h3>
+            <p class="footer__box__paragraph">503 Broadway Penthouse</p>   
+            <p class="footer__box__paragraph">New York</p>
+        </div>
+        <div class="footer__box">                    <!--Creates box inside footer (for more info please check CSS comment)-->
+            <h3 class="footer__box__title">Hours</h3>
+            <p class="footer__box__paragraph"><span class="footer__box__paragraph--bold">Monday - Friday:</span> 9am - 7pm</p>
+            <p class="footer__box__paragraph"><span class="footer__box__paragraph--bold">Saturday - Sunday:</span> 10am - 5pm</p>
+        </div>
+        <div class="footer__box">                   <!--Creates box inside footer (for more info please check CSS comment)-->
+            <h3 class="footer__box__title">Social</h3> 
+            <a href="https://www.facebook.com" target="_blank"> <img src="assets/logos/Facebook-Icon.svg" class="footer__logo" alt="Facebook"></a>
+            <a href="https://www.yelp.com" target="_blank"> <img src="assets/logos/Yelp-Icon.svg" class="footer__logo" alt="Yelp"></a>
+            <a href="https://www.instagram.com" target="_blank"> <img src="assets/logos/Instagram-Icon.svg" class="footer__logo" alt="Instagram"></a>
+        </div>
+        <img src="assets/logos/coffee-beans-logo-and-footer.svg" class="footer__background-icon1" alt="coffee-bean-logo-footer">
+        <img src="assets/logos/coffee-beans-logo-and-footer.svg" class="footer__background-icon2" alt="coffee-bean-logo-footer">
+    </footer>
+</body>
+</html>
