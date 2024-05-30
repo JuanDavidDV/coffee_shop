@@ -1,0 +1,161 @@
+body {
+  font-family: "Open Sans";
+  font-weight: 400;
+}
+
+/*"Frame" is defined as the border lines surrrounding an object in the website*/
+* {
+  box-sizing: border-box; /*Added box-sizing: border-box, to prevent main containers, and elements, lose consistent measurements. And also to prevent the website have empty white spaces on the right sides*/
+}
+
+/*Removes margin, and padding from the body around website, applied to match display from Mock docuemnt*/
+body {
+  margin: 0rem;
+  padding: 0rem;
+}
+
+/*Variables*/
+.section-display, .pastries, #pastries, .cold-drinks, #cold-drinks, .hot-drinks, #hot-drinks, .header-navigation {
+  width: 100%;
+  padding: 1.25em;
+}
+
+.box, .sub-navigation__box, .header-navigation__container--box, .header-navigation__container {
+  display: inline-block;
+}
+
+.title-h1-h2, .header__background-image__menu-box__title, .title-foods-and-drinks, .pastries__title, #pastries__title, .cold-drinks__title, #cold-drinks__title, .hot-drinks__title, #hot-drinks__title {
+  font-size: 3.75rem;
+  font-weight: 300;
+}
+
+.title-foods-and-drinks, .pastries__title, #pastries__title, .cold-drinks__title, #cold-drinks__title, .hot-drinks__title, #hot-drinks__title {
+  color: #393939;
+  margin: 0em 0em 0.33333em 0em; /*customized padding to match the Mock Document*/
+}
+
+.title-h3, .pastries__subheading--product-name, #pastries__subheading--product-name, .cold-drinks__subheading--product-name, #cold-drinks__subheading--product-name, .hot-drinks__subheading--product-name, #hot-drinks__subheading--product-name {
+  font-size: 2.0625rem;
+  font-weight: 300;
+  margin-bottom: 0;
+  margin-top: 0.1em; /*customized margin to have a similar layout as Mock doc*/
+  color: #393939;
+}
+
+.paragraph--foods-and-drinks, .pastries__paragraph--description, #pastries__paragraph--description, .cold-drinks__paragraph--description, #cold-drinks__paragraph--description, .hot-drinks__paragraph--description, #hot-drinks__paragraph--description { /*customized padding and margin to make display as close as possible like the Mock doc*/
+  font-size: 1.125rem;
+  font-weight: 400;
+  font-style: italic;
+  color: #393939;
+  padding: 0% 30%; /*Customized padding to have paragraphs aligned layout similar to Mock doc*/
+  margin-top: 0.5em;
+  margin-bottom: 0em;
+}
+
+.paragraph--price, .pastries__paragraph--price, #pastries__paragraph--price, .cold-drinks__paragraph--price, #cold-drinks__paragraph--price, .hot-drinks__paragraph--price, #hot-drinks__paragraph--price {
+  font-size: 1.125rem;
+  font-weight: 400;
+  color: #5BACC3;
+  margin: 0em;
+  padding: 0.5em 0em 1.25em 0em; /*customized margin to make price look as similar as the Mock doc*/
+}
+
+.nav-link--style, .sub-navigation__box__link, .header-navigation__container__link {
+  font-size: 1.3125rem;
+  font-weight: 400;
+}
+
+.header-navigation {
+  background-color: #FFF0ED;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+.header-navigation__logo-and-title {
+  display: flex; /*Flex used to make logo and title appear next to each other*/
+}
+.header-navigation__logo {
+  padding-top: 0.8em; /*Customed padding to make logo align as close as the Mock doc*/
+  padding-right: 0.3125em;
+  width: 3.125rem;
+}
+.header-navigation__title--link {
+  text-decoration: none; /*Removes underline link text decoration from title*/
+}
+.header-navigation__title {
+  font-size: 3.2rem; /*Customed font-size to make it look as in the Mock doc*/
+  font-weight: 300;
+  color: #393939;
+  margin: 0em;
+}
+.header-navigation__container__link {
+  margin: 1.25em;
+  text-decoration: none;
+  color: #393939;
+}
+.header-navigation__container__link--color {
+  color: #5BACC3;
+  margin-right: 0em; /*Removes margin right from list nav "Shop Now" to make it look like in the Mock document*/
+}
+
+.header__background-image {
+  background-image: url("../assets/images/coffee-circle.jpg");
+  width: 100%;
+  height: 43.75rem;
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.header__background-image__menu-box {
+  background-color: #393939;
+  width: 18.75rem;
+  height: 12.5rem;
+  position: relative;
+}
+.header__background-image__menu-box--frame {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-style: solid;
+  border-width: 0.3125rem;
+  border-color: #5BACC3;
+  position: absolute;
+  top: -0.625rem; /*5px offset + 5px borther-width for cross axis = 10px=0.625rem. Customized offset/position match design as in the Mock document*/
+  right: 0.625rem; /*5px offset + 5px borther-width for main axis = 10px=0.625rem. Customized offset/position match design as in the Mock document*/
+}
+.header__background-image__menu-box__title {
+  color: #FFF;
+}
+
+.sub-navigation {
+  display: flex;
+  align-items: center; /*Used display, align-items, and justify-content, to centered text.*/
+  justify-content: center;
+  height: 5rem;
+  background-color: #393939;
+}
+.sub-navigation__box--separators { /*Set ups display for nav separators*/
+  border-left: 0.25rem solid #5BACC3;
+}
+.sub-navigation__box__link {
+  color: #FFF;
+  text-decoration: none;
+  padding: 0em 1.25em;
+}
+
+.hot-drinks, #hot-drinks { /*included both "class" and "Id" in a single statement to have an efficient and concrete sass*/
+  background-color: #FFF0ED;
+  text-align: center;
+}
+.cold-drinks, #cold-drinks { /*included both "class" and "Id" in a single statement to have an efficient and concrete sass*/
+  background-color: #F7F7F7;
+  text-align: center;
+}
+.pastries, #pastries {
+  background-color: #FFF0ED;
+  text-align: center;
+}/*# sourceMappingURL=menu.css.map */

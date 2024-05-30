@@ -1,0 +1,388 @@
+body {
+  font-family: "Open Sans";
+  font-weight: 400;
+}
+
+/*"Frame" is defined as the border lines surrrounding an object in the website*/
+* {
+  box-sizing: border-box; /*Added box-sizing: border-box, to prevent main containers, and elements, lose consistent measurements. And also to prevent the website have empty white spaces on the right sides*/
+}
+
+/*Removes margin in the body around website, applied to match display from Mock docuemnt*/
+body {
+  margin: 0rem;
+  padding: 0rem;
+}
+
+/*Variables*/
+@keyframes rotation--tilted-can {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+@keyframes discount__animation {
+  0% {
+    background-color: #393939;
+  }
+  50% {
+    background-color: #5BACC3;
+  }
+  100% {
+    background-color: #393939;
+  }
+}
+.section-display, .footer, .discount, .products, .header, .header-navigation {
+  width: 100%;
+  padding: 1.25em;
+}
+
+.title-h1-h2, .discount__subcontainer-top__title, .products__title, .header__text-container__title {
+  font-size: 3.75rem;
+  font-weight: 300;
+  color: #393939;
+}
+
+.title-h3, .footer__box__title, .products__card__sub-container__title {
+  font-size: 2.0625rem;
+  font-weight: 300;
+  color: #393939;
+}
+
+.button-nav-link--style, .discount__subcontainer-top__button, .products__button, .header__button, .header-navigation__container__link {
+  font-size: 1.3125rem;
+  font-weight: 400;
+}
+
+.paragraph, .footer__box__paragraph, .discount__subcontainer-top__paragraph, .header__text-container__paragraph {
+  font-size: 1.125rem;
+  font-weight: 400;
+  color: #393939;
+}
+
+.paragraph--discount, .discount__subcontainer-bottom__text {
+  color: #FFF;
+  font-size: 2.8125rem;
+  font-weight: 400;
+  margin: 0em; /*Margin 0 added to match display is in Mock doc*/
+  text-align: center;
+}
+
+.box, .products__card__sub-container--description, .header__image, .header__text-container, .header-navigation__container--box, .header-navigation__container {
+  display: inline-block; /*Setups inline-blocks boxes inside the main nav container*/
+}
+
+.image--size, .discount__subcontainer-top__background-image--tilted-can, .products__card-container__card-box--image {
+  height: 17.5rem;
+}
+
+button:hover {
+  cursor: pointer; /*Change cursor to pointer in button. Pointer was not applied by default to a button. */
+}
+
+.logo, .footer__logo, .discount__subcontainer-top__logo, .header-navigation__logo { /*selects width for all logos*/
+  width: 3.125rem;
+}
+
+.footer__background-logo, .footer__background-icon2, .footer__background-icon1 {
+  width: 7.5rem;
+  opacity: 25%;
+  position: absolute;
+}
+
+.header-navigation {
+  background-color: #FFF0ED;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+.header-navigation__logo-and-title {
+  display: flex; /*Flex used to make logo and title appear next to each other*/
+}
+.header-navigation__logo {
+  padding-top: 0.8em; /*Customed padding to make logo align as close as the Mock doc*/
+  padding-right: 0.3125em;
+}
+.header-navigation__title__link {
+  text-decoration: none;
+}
+.header-navigation__title {
+  font-size: 3.2rem; /*Customed size to make it look as in the Mock doc*/
+  font-weight: 300;
+  color: #393939;
+  margin: 0em;
+}
+.header-navigation__container__link {
+  margin: 1.25em;
+  text-decoration: none;
+  color: #393939;
+}
+.header-navigation__container__link--color {
+  color: #5BACC3;
+  margin-right: 0em; /*Removes margin right from list nav "Shop Now" to make it look like in the Mock document*/
+}
+
+.header {
+  background-color: #FFF0ED;
+  padding-bottom: 2.5em; /*Added to match Mock document*/
+}
+.header__text-container {
+  width: 45vw; /*Adjust position for the text container*/
+  padding: 8%; /*Added 8% padding to make it look as close as possible to Mock document*/
+  vertical-align: top; /*Aligns container upwards*/
+}
+.header__text-container__title {
+  margin: 0em; /*Removes default margin*/
+}
+.header__button {
+  background-color: #5BACC3;
+  padding: 1.25em;
+  margin: 1.25em 1.25em 1.25em 0.3125em; /*Fixed margin to aligh button to the right vertically as shown on the Mock Document*/
+  width: 11.25rem;
+  color: #FFF;
+  border: none;
+  position: relative;
+}
+.header__button:active .header__button--frame {
+  transform: translate(0.41rem, 0.41rem); /*Animates "Shop Now" button*/
+}
+.header__button:active .products__button--frame {
+  transform: translate(0.41rem, 0.41rem); /*Animates "View All" button*/
+}
+.header__button:active .discount__subcontainer-top__button--frame {
+  transform: translate(0.41rem, 0.41rem); /*Animates "Learn More" button*/
+}
+.header__button--frame {
+  width: 100%;
+  height: 100%;
+  border-width: 0.125rem;
+  border-color: #393939;
+  border-style: solid;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: -0.41rem; /*Customized offset/position match design as in the Mock document*/
+  left: -0.41rem; /*Customized offset/position match design as in the Mock document*/
+}
+.header__image {
+  padding-left: 13%; /*Left margin applied in order to separate inline-blocks and make them look as close as possible as the Mock doc*/
+}
+
+.products {
+  background-color: #F7F7F7;
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 3.25em; /*Customized margin added to match display as the Mock doc*/
+}
+.products__title {
+  text-align: center;
+  margin: 0.5em; /*Customed margin to have a similar display as Mock doc*/
+}
+.products__card-container {
+  display: flex;
+  justify-content: center; /*Centers the 3 cards*/
+  margin-bottom: 2.25em; /*Margin added to add an space between the cards and the button, similar to Mock doc*/
+}
+.products__card-container__card-box {
+  width: 20.625rem;
+  height: 27.5rem;
+  margin: 2em; /*Included a margin of 2em to match the display exactly as shown in the Mock Document */
+  padding: 1.25em 0em; /*Padding added at top and bottom in order to match display presented in Mock doc*/
+  border-radius: 0.625rem;
+  box-shadow: 0rem 0.3125rem 0.5625rem -0.0625rem rgba(0, 0, 0, 0.25);
+  text-align: center; /*center content (in this case the images)*/
+  background-color: #FFF;
+}
+.products__card-container__card-box--image {
+  padding-bottom: 1.25em; /*Added 1.25em padding-bottom to make card display look as accurate as the Mock document*/
+}
+.products__card__sub-container {
+  width: 100%;
+  background-color: #FFF0ED;
+  display: flex;
+  justify-content: space-around;
+  border-bottom-left-radius: 0.625rem;
+  border-bottom-right-radius: 0.625rem;
+  padding-bottom: 1.25em; /*Added 1.25em padding-bottom to make card display look as accurate as the Mock document*/
+}
+.products__card__sub-container__title {
+  margin-bottom: 0em; /*Removed bottom margin to make Product title layout display similar as the Mock*/
+}
+.products__card__sub-container--quantity { /*used default font-size value from global css to make it look as the Mock doc*/
+  color: #909090;
+  display: flex;
+  margin-top: 0em; /*Removed top margin to make the product quantitive decription layout display similar as the Mock */
+}
+.products__card__sub-container--price {
+  font-size: 2rem;
+  color: #5BACC3;
+  font-weight: 700; /*Addded a font weight of 700 (bold) in order to make the price style look the same as in the Mock doc*/
+}
+.products__card__sub-container--price--alignment {
+  align-content: flex-end; /*Content aligned to "flex-end" in order to align cardPrice as shown in Mock document */
+}
+.products__card__sub-container--price-padding {
+  padding-left: 2em; /*Adds a 2em left padding to the ($5) so that the alignment of that particular price matches Mock document*/
+}
+.products__link-button {
+  display: block;
+  margin: auto; /*mainly used to center button.*/
+}
+.products__button {
+  background-color: #5BACC3;
+  padding: 1.25em;
+  margin: 1.25em 1.25em 1.25em 0.3125em; /*Fixed margin to aligh button to the right vertically as shown on the Mock Document*/
+  width: 11.25rem;
+  color: #FFF;
+  border: none;
+  position: relative;
+  margin: 0em; /*Margin removed given that it was inheric by the link of the button, and cause "View All" button be accessible outside of the button itself */
+}
+.products__button:active .header__button--frame {
+  transform: translate(0.41rem, 0.41rem); /*Animates "Shop Now" button*/
+}
+.products__button:active .products__button--frame {
+  transform: translate(0.41rem, 0.41rem); /*Animates "View All" button*/
+}
+.products__button:active .discount__subcontainer-top__button--frame {
+  transform: translate(0.41rem, 0.41rem); /*Animates "Learn More" button*/
+}
+.products__button--frame {
+  width: 100%;
+  height: 100%;
+  border-width: 0.125rem;
+  border-color: #393939;
+  border-style: solid;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: -0.41rem; /*Customized offset/position match design as in the Mock document*/
+  left: -0.41rem; /*Customized offset/position match design as in the Mock document*/
+}
+
+.discount {
+  background-color: #FFF;
+  margin: 1.25em 0em;
+}
+.discount__subcontainer-top {
+  display: flex;
+  justify-content: space-around; /*Apply space layout for the "We're Different" and image sections */
+  padding: 1.25em;
+  margin: 1.25em;
+}
+.discount__subcontainer-top--text-logos-button { /*Display for the container that has text, logos, and button*/
+  width: 40vw; /*40vw applied in order to match Mock Document layout*/
+  margin: 1.25em 5.625em 1.25em 0em; /*Fixed margin to align vertically current box, to discount container at the bottom, to make display look as close as the Mock document*/
+  padding: 1.25em;
+  align-self: flex-end; /*Possitions current container to appropiate location in the cross axis*/
+}
+.discount__subcontainer-top__title {
+  margin: 0em; /*Remove default margin*/
+}
+.discount__subcontainer-top__logo--box {
+  display: flex;
+  justify-content: space-between;
+  padding-right: 1.5625em; /*added a margin-right of 0.5625rem to align cup of coffee logo to the paragraph above as shown in the Mock document.*/
+}
+.discount__subcontainer-top__button {
+  background-color: #5BACC3;
+  padding: 1.25em;
+  margin: 1.25em 1.25em 1.25em 0.3125em; /*Fixed margin to aligh button to the right vertically as shown on the Mock Document*/
+  width: 11.25rem;
+  color: #FFF;
+  border: none;
+  position: relative;
+}
+.discount__subcontainer-top__button:active .header__button--frame {
+  transform: translate(0.41rem, 0.41rem); /*Animates "Shop Now" button*/
+}
+.discount__subcontainer-top__button:active .products__button--frame {
+  transform: translate(0.41rem, 0.41rem); /*Animates "View All" button*/
+}
+.discount__subcontainer-top__button:active .discount__subcontainer-top__button--frame {
+  transform: translate(0.41rem, 0.41rem); /*Animates "Learn More" button*/
+}
+.discount__subcontainer-top__button--frame {
+  width: 100%;
+  height: 100%;
+  border-width: 0.125rem;
+  border-color: #393939;
+  border-style: solid;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: -0.41rem; /*Customized offset/position match design as in the Mock document*/
+  left: -0.41rem; /*Customized offset/position match design as in the Mock document*/
+}
+.discount__subcontainer-top__background-image {
+  background-image: url("../assets/images/coldbrewbackground.png");
+  width: 25rem;
+  padding: 1.25em;
+  margin: 1.25em 1.25em 1.25em 5.625em; /*Fixed margin to align vertically current box, to discount container at the bottom, to make display look as close as the Mock document*/
+  background-size: cover;
+  position: relative;
+}
+.discount__subcontainer-top__background-image--frame {
+  width: 100%;
+  height: 100%;
+  border-style: solid;
+  border-width: 0.3125rem;
+  border-color: #5BACC3;
+  position: absolute;
+  top: -1.5625rem; /*20px offset + 5px borther-width for main axis = 25px=1.5625rem. Customized offset/position match design as in the Mock document*/
+  left: -1.5625rem; /*20px offset + 5px borther-width for cross axis = 25px=1.5625rem. Customized offset/position match design as in the Mock document*/
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.discount__subcontainer-top__background-image--tilted-can {
+  padding: 1.25em;
+  margin: 1.25em;
+}
+.discount__subcontainer-top__background-image--tilted-can:hover {
+  animation: rotation--tilted-can 2s infinite linear;
+}
+.discount__subcontainer-bottom { /*Discount container (box)*/
+  width: 90%;
+  margin: 8em auto; /*Included a margin of 8em in order to match the display size of the discount section accorting to the Mock document display*/
+  padding: 2em; /*2em added to make discound box look like Mock document*/
+  animation: discount__animation 2.5s ease-in-out infinite; /*ease-in-out used to make animation similar to Mock doc demo*/
+}
+.discount__subcontainer-bottom__text--bold {
+  font-weight: 700; /*Provides bold style to a specific part in the text of discount*/
+}
+
+.footer {
+  background-color: #FFF0ED;
+  display: flex;
+  justify-content: space-around;
+  align-items: baseline;
+  position: relative;
+  overflow: hidden; /*used to prevent coffee bean logo background, to overlap right side of the page and add extra white area*/
+}
+.footer__box { /*Adds padding and margin to footer content to match as acqurate as possible to Mock doc*/
+  padding: 1.25em;
+  margin: 1.25em;
+}
+.footer__box__title {
+  margin-bottom: 0.6061em; /*added to match Social section display to look lined as in the Mock doc*/
+}
+.footer__box__paragraph {
+  margin: 0em;
+}
+.footer__box__paragraph--bold {
+  font-weight: 700;
+}
+.footer__background-icon1 {
+  left: -3%;
+  top: 12%;
+}
+.footer__background-icon2 {
+  bottom: 10%;
+  right: -3%;
+}/*# sourceMappingURL=landing.css.map */
