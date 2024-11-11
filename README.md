@@ -1,6 +1,6 @@
 # Coffee Shop:
 
-A functional coffee shop website used to demonstrate comprehension of animations, Flexbox, SASS, and BEM principles. This was the first website I built.
+A coffee shop website used to demonstrate comprehension of animations, Flexbox, SASS, BEM principles and HTML. This was the first website I built.
 
 ## Technologies used to develop this project:
 <p align="center">
