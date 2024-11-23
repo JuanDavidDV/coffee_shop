@@ -10,4 +10,4 @@ A coffee shop website used to demonstrate comprehension of animations, Flexbox, 
 </p>
 
 # Website 
-Click the following link to access the website: [https://brainflix-juandavid.netlify.app/](https://coffee-shop-juan-david.netlify.app/)
+Click the following link to access the website: https://coffee-shop-juan-david.netlify.app/
